@@ -1,5 +1,26 @@
-<input type="text" class="search" [(ngModel)]="searchQuery" placeholder="Search Images">
-<button (click)="searchImages(searchQuery)">find  images </button>
+<md-card>
+    <md-input-container>
+            <input type="text" class="search" [(ngModel)]="searchQuery" name="search" placeholder="Search Images">
+    </md-input-container>
+    <br>
+    <button (click)="searchImages(searchQuery)" md-raised-button type="button">find  images </button>
+
+</md-card>
+
+<div *ngIf="searching">
+    <md-progress-bar mode="indeterminate"></md-progress-bar>
+
+</div>
+<md-card>
+    <h4 *ngIf="imagesFound" md-subeader> Results</h4>
+    <masonry [useImagesLoaded]="true">
+        <masonry-brick *ngFor="let image  of images" class="Image-container">
+
+        </masonry-brick>
+    </masonry>
+</md-card>
+
+
 <p *ngIf="searching">fetching data</p>
 <div *ngFor="let image of images" class="image-container">
     <img src="{{image.webformatURL}}">
