@@ -13,7 +13,8 @@ export class ImageService{
     private perPage='&per_page=10';  
     constructor(private _http:Http){}
     getImage(query){
-        return this._http.get(this.URL+query+this.perPage).map(res=>res.json());
+        return this._http.get(this.URL+query+this.perPage)
+        .map(res=>res.json());
 
     }
 }
