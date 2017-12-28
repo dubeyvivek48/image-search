@@ -10,6 +10,7 @@ import {ImageService} from '../Shared/image.service';
 export class ImageListComponent implements OnInit {
   images:any[];
   imagesFound:boolean=false;
+  searching:boolean=false;
   handleSuccess(data){
     this.imagesFound=true;
     this.images=data.hits;
@@ -24,10 +25,11 @@ export class ImageListComponent implements OnInit {
   ngOnInit() {
   }
   searchImages(query:string){
+      this.searching=true;
     return this._imageService.getImage(query).subscribe(
       data=>this.handleSuccess(data),
       error=>this.handleError(error),
-      ()=>console.log("complet action")
+      ()=>this.searching=false,
     );
   }
 
