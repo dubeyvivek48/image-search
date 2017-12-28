@@ -1,1 +1,2 @@
-<button (click)="searchImages('new york')">find  images </button>
+<input type="text" class="search" [(ngModel)]="searchQuery" placeholder="Search Images">
+<button (click)="searchImages(searchQuery)">find  images </button>
