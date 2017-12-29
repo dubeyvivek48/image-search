@@ -1,3 +1,5 @@
+
+
 <div class="form-group">
 
 
@@ -8,15 +10,24 @@
 <p *ngIf="searching">fetching data</p>
 <div class="row">
 
-<div *ngFor="let image of images" class="card">
-        <div class="col-sm-4">
-    <img src="{{image.webformatURL}}" class="card-img-top img-responcive image-container">
+<div *ngFor="let image of images" class="card grid-item col-sm-4" >
+        <div class="thumbnail" style="background-color:#333; color:#fff;">
+    <img src="{{image.webformatURL}}" class="card-img-top responcive">
     <div class="card-body">
-    <p class="card-text">tags:{{image.tags}}</p>
-    <p class="card-text">user:{{image.user}}</p>
-    <p class="card-text">comments:{{image.comments}}</p>
-    <p  class="card-text">likes:{{image.likes}}</p>
+    <p class="card-text">tags:{{image.tags}}
+        <br>
+        user:{{image.user}}
+        <br> 
+        comments:{{image.comments}}  <br>
+    likes:{{image.likes}}
+    <br>
+    <a class="btn btn-primary" target="_blank" href="{{image.pageURL}}">
+        Download
+    </a>
+    
+</p>
 </div>
+
 </div>
 </div>
 </div>
