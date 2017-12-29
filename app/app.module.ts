@@ -4,8 +4,7 @@ import { NgModule } from '@angular/core';
 
 import { HttpModule } from '@angular/http';
 import { FormsModule } from '@angular/forms';
-import { MaterialModule} from '@angular/material';
-import {MasonryModule} from 'angular2masonry';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 
 import { AppComponent } from './app.component';
@@ -21,9 +20,7 @@ import { ImageListComponent } from './image-list/image-list.component';
     BrowserModule,
     FormsModule,
     HttpModule,
-    MaterialModule,
-    MasonryModule
-
+    BrowserAnimationsModule
   ],
   providers: [ImageService],
   bootstrap: [AppComponent]
